@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS事件-event-知识整理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##JS 事件(event)知识整理
+###事件流
+####1.定义：描述的是页面中接受事件的顺序；
+####2.分两类
+
+事件冒泡：是指由具体元素接收，然后向上级一直传递到最不具体的元素节点
+事件捕获：最不具体的即诶单先接受，而最具体的节点时最后接收事件
+
+###事件处理
+####1.html事件处理：直接加到html结构中1&amp;lt;div id=&quot;A&quot; onclick=&quot;click()&quot;&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS事件-event-知识整理">
+<meta property="og:url" content="http://yoursite.com/2016/03/14/JS事件-event-知识整理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="##JS 事件(event)知识整理
+###事件流
+####1.定义：描述的是页面中接受事件的顺序；
+####2.分两类
+
+事件冒泡：是指由具体元素接收，然后向上级一直传递到最不具体的元素节点
+事件捕获：最不具体的即诶单先接受，而最具体的节点时最后接收事件
+
+###事件处理
+####1.html事件处理：直接加到html结构中1&amp;lt;div id=&quot;A&quot; onclick=&quot;click()&quot;&amp;gt">
+<meta property="og:image" content="http://yoursite.com/noteImg/20121031173236106.jpg">
+<meta property="og:updated_time" content="2016-03-14T02:24:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS事件-event-知识整理">
+<meta name="twitter:description" content="##JS 事件(event)知识整理
+###事件流
+####1.定义：描述的是页面中接受事件的顺序；
+####2.分两类
+
+事件冒泡：是指由具体元素接收，然后向上级一直传递到最不具体的元素节点
+事件捕获：最不具体的即诶单先接受，而最具体的节点时最后接收事件
+
+###事件处理
+####1.html事件处理：直接加到html结构中1&amp;lt;div id=&quot;A&quot; onclick=&quot;click()&quot;&amp;gt">
+<meta name="twitter:image" content="http://yoursite.com/noteImg/20121031173236106.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JS事件-event-知识整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/14/JS事件-event-知识整理/" class="article-date">
+  <time datetime="2016-03-14T02:23:22.000Z" itemprop="datePublished">2016-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS事件-event-知识整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##JS 事件(event)知识整理</p>
+<p>###事件流</p>
+<p>####1.定义：描述的是页面中接受事件的顺序；</p>
+<p>####2.分两类</p>
+<ul>
+<li>事件冒泡：是指由具体元素接收，然后向上级一直传递到最不具体的元素节点</li>
+<li>事件捕获：最不具体的即诶单先接受，而最具体的节点时最后接收事件</li>
+</ul>
+<p>###事件处理</p>
+<p>####1.html事件处理：直接加到html结构中<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"A"</span> <span class="attr">onclick</span>=<span class="string">"click()"</span>&gt;</span>BUTTON<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>####2.DOM 0级结构处理：把一个函数直接赋值给一个事件处理程序属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">target.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####3.DOM 2级结构处理：</p>
+<p>#####addEventListener(type,function,useCapture)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">target.addEventListener(<span class="string">'click'</span>,func,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p>
+<p>####4.IE事件处理</p>
+<p>#####attachEvent</p>
+<p>#####detachEvent<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">target.attachEvent(<span class="string">'onclick'</span>,func);</span><br></pre></td></tr></table></figure></p>
+<p>###鼠标事件</p>
+<ul>
+<li>mouseover：鼠标移动到元素上触发事件</li>
+<li>mousemove：鼠标已经移动到元素上并且在元素区域移动</li>
+<li>mousedown：点击鼠标的按键（左键，右键，滚轮）</li>
+<li>mouseup：当设备弹起的时候</li>
+<li>scroll：滑动滑动条的时候</li>
+<li>mousewheel：滚动鼠标滚轮的时候触发</li>
+<li>mouseout：移除目标元素后触发</li>
+</ul>
+<p>###事件注册（4个方法）<br>//除IE<br>target.addEventListener(type,listener,useCapture)<br>target.removeEventListener(type,listener,useCapture)<br>target：文档节点<br>type：字符串，事件名称，不含”on”，列子”click”，”mousedown”<br>istener：实现eventListener接口或者是javaScript的函数<br>usecCapture：true使用捕捉；false使用冒泡<br>//IE<br>target.attachEvent(type,listener)<br>target.detachEvent(type,listener)<br>target：文档节点<br>type：字符串，事件名称，含”on”，列子”onclick”，”onmousedown”<br>listener：实现eventListener接口或者是javaScript的函数</p>
+<p>#####两者使用原理：对可执行的优先级不同<br>ele.attachEvent(“click”,method1);<br>ele.attachEvent(“click”,method2);<br>ele.attachEvent(“click”,method3);<br>执行顺序为method3&gt;method2&gt;method1；</p>
+<p>ele.addEventListener(“click”,method1,false);<br>ele.addEventListener(“click”,method2,false);<br>ele.addEventListener(“click”,method3,false);<br>执行顺序为method1&gt;method2&gt;method3；</p>
+<p>#####兼容的方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">addEvent(target,<span class="string">"load"</span>,func)</span><br><span class="line"><span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params">target,type,fun</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(target.attach)&#123;</span><br><span class="line">		target.attach(<span class="string">'on'</span>+type,fun);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(target.addEventListener)&#123;</span><br><span class="line">		target.addEventListener(type,fun,<span class="literal">false</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>remove也如此</p>
+<p>#####获取事件的对象和对象源<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eventHandler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//获取事件对象</span></span><br><span class="line">	e = e || <span class="built_in">window</span>.event; <span class="comment">//IE和chrome下是window.event,FF下是e</span></span><br><span class="line">	<span class="comment">//获取对象源</span></span><br><span class="line">	<span class="keyword">var</span> target = e.target || e.srcElement;<span class="comment">//IE和chrome下为e.srcElement FF下为target</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#####取消事件默认行为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">preventDefaultHandler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	e = e || <span class="built_in">window</span>.event;</span><br><span class="line">	<span class="keyword">if</span>(e.preventDefault)&#123;</span><br><span class="line">		e.preventDefault();<span class="comment">//IE除外</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		e.returnValue = <span class="literal">false</span>;</span><br><span class="line">		<span class="comment">//注意：这个地方无法用return false代替</span></span><br><span class="line">		<span class="comment">//return false 只是结束函数</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#####阻止事件冒泡<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopPropagationHandler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	e = e || <span class="built_in">window</span>.event</span><br><span class="line">	<span class="keyword">if</span>(e.stopPropagation)&#123;</span><br><span class="line">		e.stopPropagation();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		e.cancelBubble = <span class="literal">true</span>;<span class="comment">//IE</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#####事件委托</p>
+<p>######事件委托是将事件加到容器元素上，然后判断是否点击了容器元素就是点击了容器内部<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">myTable.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	e = e || <span class="built_in">window</span>.event;</span><br><span class="line">	targetNode = e.target || e.srcElement;</span><br><span class="line">	<span class="keyword">if</span>(targetNode.nodeName.toLowerCase==<span class="string">'tr'</span>)&#123;</span><br><span class="line">		alert(<span class="string">"you click the tr"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###事件流<br><img src="/noteImg/20121031173236106.jpg" alt="Alt text"></p>
+<ul>
+<li>事件触发的过程：当一个事件被触发时，body会最先得到事件发生的信息，依次向下传递，这就是事件的捕捉过程</li>
+<li>还记得事件注册方法addEventListener(type，function，useCapture)，当useCapture为false的时候，说明事件冒泡阶段执行，如果为true的时候，说明事件捕获阶段执行</li>
+<li>冒泡事件：从下向上依次执行事件处理函数，当然需元素注册了句炳，在这个过程中可以阻止冒泡</li>
+<li>一般事件的执行过程为捕获—处理－冒泡（有的浏览器不支持捕获）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/14/JS事件-event-知识整理/" data-id="cilrlpjgn0000njjjhzu7mq1k" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/14/JS变量/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          JS变量
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/14/JS变量/">JS变量</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/14/JS事件-event-知识整理/">JS事件-event-知识整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
