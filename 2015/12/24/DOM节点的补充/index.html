@@ -6,25 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>DOM节点的补充 | DaisyCream</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##DOM节点的补充
-###将string(里面是一些html的语句) =&amp;gt;转化成html
-###exampletxt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)
-12&amp;lt;h1&amp;gt;AJAX is not a programming language.&amp;lt;/h1&amp;gt;&amp;lt;h2&amp;gt;It is just a techn">
+  <meta name="description" content="DOM节点的补充将string(里面是一些html的语句) =&amp;gt;转化成htmlexampletxt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)
+12&amp;lt;h1&amp;gt;AJAX is not a programming language.&amp;lt;/h1&amp;gt;&amp;lt;h2&amp;gt;It is just a technique for c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM节点的补充">
 <meta property="og:url" content="http://yoursite.com/2015/12/24/DOM节点的补充/index.html">
 <meta property="og:site_name" content="DaisyCream">
-<meta property="og:description" content="##DOM节点的补充
-###将string(里面是一些html的语句) =&amp;gt;转化成html
-###exampletxt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)
-12&amp;lt;h1&amp;gt;AJAX is not a programming language.&amp;lt;/h1&amp;gt;&amp;lt;h2&amp;gt;It is just a techn">
-<meta property="og:updated_time" content="2016-03-14T08:22:32.000Z">
+<meta property="og:description" content="DOM节点的补充将string(里面是一些html的语句) =&amp;gt;转化成htmlexampletxt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)
+12&amp;lt;h1&amp;gt;AJAX is not a programming language.&amp;lt;/h1&amp;gt;&amp;lt;h2&amp;gt;It is just a technique for c">
+<meta property="og:updated_time" content="2016-03-15T12:23:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM节点的补充">
-<meta name="twitter:description" content="##DOM节点的补充
-###将string(里面是一些html的语句) =&amp;gt;转化成html
-###exampletxt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)
-12&amp;lt;h1&amp;gt;AJAX is not a programming language.&amp;lt;/h1&amp;gt;&amp;lt;h2&amp;gt;It is just a techn">
+<meta name="twitter:description" content="DOM节点的补充将string(里面是一些html的语句) =&amp;gt;转化成htmlexampletxt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)
+12&amp;lt;h1&amp;gt;AJAX is not a programming language.&amp;lt;/h1&amp;gt;&amp;lt;h2&amp;gt;It is just a technique for c">
   
     <link rel="alternative" href="/atom.xml" title="DaisyCream" type="application/atom+xml">
   
@@ -80,7 +74,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -214,9 +208,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##DOM节点的补充</p>
-<p>###将string(里面是一些html的语句) =&gt;转化成html</p>
-<p>###example<br><code>txt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)</code></p>
+        <h2 id="DOM节点的补充"><a href="#DOM节点的补充" class="headerlink" title="DOM节点的补充"></a>DOM节点的补充</h2><h3 id="将string-里面是一些html的语句-gt-转化成html"><a href="#将string-里面是一些html的语句-gt-转化成html" class="headerlink" title="将string(里面是一些html的语句) =&gt;转化成html"></a>将string(里面是一些html的语句) =&gt;转化成html</h3><h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><p><code>txt文件中存在这个数据(/node.js(Study)/JQueryAjax/jsonTxt01.txt)</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;AJAX is not a programming language.&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt;It is just a technique for creating better and more interactive web 	applications.&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
 <p>将用DOM操作使一个div获取这个元素并且加入到此div里面</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> text = <span class="built_in">document</span>.getElementById(<span class="string">"text"</span>);</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> xmlHttp;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">            xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line"></span><br><span class="line">        xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (xmlHttp.status == <span class="number">200</span> &amp;&amp; xmlHttp.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="keyword">var</span> htmlStr = xmlHttp.responseText;<span class="comment">//获取的是一string</span></span><br><span class="line">                <span class="keyword">var</span> node = strToNode(htmlStr);<span class="comment">//获取到想要的html元素</span></span><br><span class="line"></span><br><span class="line">                text.innerHTML = <span class="string">""</span>;<span class="comment">//清空text的文本节点，或许下面1，2</span></span><br><span class="line">                <span class="comment">//1.var s = text.childNodes[0];</span></span><br><span class="line">                <span class="comment">//2.text.removeChild(s);</span></span><br><span class="line">                </span><br><span class="line">                text.appendChild(node);<span class="comment">//将node节点加入</span></span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        xmlHttp.open(<span class="string">"GET"</span>, <span class="string">"/node.js(Study)/JQueryAjax/jsonTxt01.txt"</span>, <span class="literal">true</span>);</span><br><span class="line">        xmlHttp.send();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strToNode</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> node1 = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    node1.innerHTML = str;<span class="comment">//将string变成html</span></span><br><span class="line">    <span class="keyword">var</span> s1 = node1.getElementsByTagName(<span class="string">"h2"</span>)[<span class="number">0</span>];<span class="comment">//获取想要的节点</span></span><br><span class="line">    <span class="keyword">return</span> s1;<span class="comment">//返回节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

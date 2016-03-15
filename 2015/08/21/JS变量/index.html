@@ -6,62 +6,53 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>JS变量 | DaisyCream</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##JS变量（作用域，定义，基本类型和引用类型）
-
+  <meta name="description" content="JS变量（作用域，定义，基本类型和引用类型）
 变量作用域
 变量定义
 基本类型和引用类型
 
-###变量分类
-
+变量分类
 局部(local)：局部性的，作用域只在该函数内部，函数的参数就是局部变量
 
 全局(global)：全局性的，在javascript文件中处处可以访问
 
 
 
-###作用域链（scope chain）
-当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable">
+作用域链（scope chain）当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable name resol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS变量">
 <meta property="og:url" content="http://yoursite.com/2015/08/21/JS变量/index.html">
 <meta property="og:site_name" content="DaisyCream">
-<meta property="og:description" content="##JS变量（作用域，定义，基本类型和引用类型）
-
+<meta property="og:description" content="JS变量（作用域，定义，基本类型和引用类型）
 变量作用域
 变量定义
 基本类型和引用类型
 
-###变量分类
-
+变量分类
 局部(local)：局部性的，作用域只在该函数内部，函数的参数就是局部变量
 
 全局(global)：全局性的，在javascript文件中处处可以访问
 
 
 
-###作用域链（scope chain）
-当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable">
+作用域链（scope chain）当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable name resol">
 <meta property="og:image" content="http://t100.qpic.cn/mblogpic/220b807af85c27c8ade2/2000">
-<meta property="og:updated_time" content="2015-11-10T08:11:23.000Z">
+<meta property="og:updated_time" content="2016-03-15T12:24:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS变量">
-<meta name="twitter:description" content="##JS变量（作用域，定义，基本类型和引用类型）
-
+<meta name="twitter:description" content="JS变量（作用域，定义，基本类型和引用类型）
 变量作用域
 变量定义
 基本类型和引用类型
 
-###变量分类
-
+变量分类
 局部(local)：局部性的，作用域只在该函数内部，函数的参数就是局部变量
 
 全局(global)：全局性的，在javascript文件中处处可以访问
 
 
 
-###作用域链（scope chain）
-当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable">
+作用域链（scope chain）当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable name resol">
 <meta name="twitter:image" content="http://t100.qpic.cn/mblogpic/220b807af85c27c8ade2/2000">
   
     <link rel="alternative" href="/atom.xml" title="DaisyCream" type="application/atom+xml">
@@ -118,7 +109,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -252,37 +243,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##JS变量（作用域，定义，基本类型和引用类型）</p>
-<ul>
+        <h2 id="JS变量（作用域，定义，基本类型和引用类型）"><a href="#JS变量（作用域，定义，基本类型和引用类型）" class="headerlink" title="JS变量（作用域，定义，基本类型和引用类型）"></a>JS变量（作用域，定义，基本类型和引用类型）</h2><ul>
 <li>变量作用域</li>
 <li>变量定义</li>
 <li>基本类型和引用类型</li>
 </ul>
-<p>###变量分类</p>
-<ul>
+<h3 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h3><ul>
 <li><p><strong>局部(local)</strong>：局部性的，作用域只在该函数内部，函数的参数就是局部变量</p>
 </li>
 <li><p><strong>全局(global)</strong>：全局性的，在javascript文件中处处可以访问</p>
 </li>
 </ul>
 <p><img src="http://t100.qpic.cn/mblogpic/220b807af85c27c8ade2/2000" alt=""></p>
-<p>###<div style="text-align:center">作用域链（scope chain）</div></p>
-<p>当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable name resolution）），它就开始查看该链的第一个对象。如果那个对象有一个名为x的属性，那么就采用那个属性的值。如果第一个对象没有名为x的属性，JavaScript就会继续查询链中的第二个对象。如果第二个对象仍然没有名为x的属性，那么就继续查询下一个对象，以此类推。如果查询到最后（指顶层代码中）不存在这个属性，那么这个变量的值就是未定义的。</p>
-<p>###变量声明</p>
-<p>####example01</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+<h3 id="作用域链（scope-chain）"><a href="#作用域链（scope-chain）" class="headerlink" title="作用域链（scope chain）"></a><div style="text-align:center">作用域链（scope chain）</div></h3><p>当JavaScript代码需要查询变量x的值时（这个过程叫做变量解析（variable name resolution）），它就开始查看该链的第一个对象。如果那个对象有一个名为x的属性，那么就采用那个属性的值。如果第一个对象没有名为x的属性，JavaScript就会继续查询链中的第二个对象。如果第二个对象仍然没有名为x的属性，那么就继续查询下一个对象，以此类推。如果查询到最后（指顶层代码中）不存在这个属性，那么这个变量的值就是未定义的。</p>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><h4 id="example01"><a href="#example01" class="headerlink" title="example01"></a>example01</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
 <p>输出：0;</p>
-<p>####example02-1<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i=<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure></p>
+<h4 id="example02-1"><a href="#example02-1" class="headerlink" title="example02-1"></a>example02-1</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i=<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
 <p>输出:2</p>
-<p>####example02-2<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(i);</span><br><span class="line">	<span class="keyword">var</span> i=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure></p>
+<h4 id="example02-2"><a href="#example02-2" class="headerlink" title="example02-2"></a>example02-2</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(i);</span><br><span class="line">	<span class="keyword">var</span> i=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
 <p>输出：undefined</p>
 <p><strong>解释</strong>：比较<code>example02-1</code>和<code>example02-2</code>，仅仅是var i = 2的位置不同了，就产生了不用的结果，本以为<code>example02-2</code>输出的结果为：0；但是却不是这样，这就是定义变量的问题，如图（scope chain）图，在变量解析过程中首先查找局部的作用域，然后查找上层作用域。在代码一的函数当中没有定义变量i，于是查找上层作用域（全局作用域），进而进行输出其值。但是在代码二的函数内定义了变量i（无论是在alter之后还是之前定义变量，都认为在此作用域拥有变量i），于是不再向上层的作用域进行查找，直接输出i。但是不幸的是此时的局部变量i并没有赋值，所以输出的是undefined。</p>
-<p>####example03-1（加深定义问题的例子）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="keyword">var</span> a = funcion()&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b());</span><br></pre></td></tr></table></figure></p>
+<h4 id="example03-1（加深定义问题的例子）"><a href="#example03-1（加深定义问题的例子）" class="headerlink" title="example03-1（加深定义问题的例子）"></a>example03-1（加深定义问题的例子）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="keyword">var</span> a = funcion()&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b());</span><br></pre></td></tr></table></figure>
 <p>输出：undefined<br>function<br>2<br>解释：如例子<code>example02</code>中的，查找变量a，在输出console.log(a())的时候，只是定义的a，并没有给a赋值，所以输出结果是undefined，但是在console.log(typeof a)中，输出是function，更足以说明是定义了a，不然不会知道它是function类型；</p>
-<p>####example03-2<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a,b</span><br><span class="line"><span class="built_in">console</span>.log(a());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line">a = funcion()&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b());</span><br></pre></td></tr></table></figure></p>
+<h4 id="example03-2"><a href="#example03-2" class="headerlink" title="example03-2"></a>example03-2</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a,b</span><br><span class="line"><span class="built_in">console</span>.log(a());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line">a = funcion()&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b());</span><br></pre></td></tr></table></figure>
 <p>可以将<code>example03-1</code>看做是这样</p>
-<p>###变量声明可分为</p>
-<ul>
+<h3 id="变量声明可分为"><a href="#变量声明可分为" class="headerlink" title="变量声明可分为"></a>变量声明可分为</h3><ul>
 <li><p>显式申明：</p>
 <p>  如var i = 0;</p>
 <p>  显式声明的变量i是在预编译时就已经编译到调用对象中了</p>
@@ -292,26 +277,22 @@
 <p>  隐式声明变量在解释时才被定义为全局变量</p>
 </li>
 </ul>
-<p>###基本类型和引用类型</p>
-<ul>
+<h3 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h3><ul>
 <li>基本类型：数值、布尔值、null和undefined属于基本类型,基本类型在内存中具有固定的内存大小</li>
 <li>引用类型：对象、数组和函数属于引用类型, 他们可以具有任意长度，因此他们的内存大小是不定的，因此变量中存储的实际上是对此数据的<strong>引用</strong>，通常是内存地址或者指针.</li>
 </ul>
-<p>###example04<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> j = i;</span><br><span class="line"><span class="keyword">var</span> j=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line"><span class="built_in">console</span>.log(j);</span><br></pre></td></tr></table></figure></p>
+<h3 id="example04"><a href="#example04" class="headerlink" title="example04"></a>example04</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> j = i;</span><br><span class="line"><span class="keyword">var</span> j=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line"><span class="built_in">console</span>.log(j);</span><br></pre></td></tr></table></figure>
 <p>输出：0,1</p>
-<p>###example04<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">a = b;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a());</span><br><span class="line"><span class="built_in">console</span>.log(b());</span><br><span class="line"><span class="built_in">console</span>.log(c());</span><br></pre></td></tr></table></figure></p>
+<h3 id="example04-1"><a href="#example04-1" class="headerlink" title="example04"></a>example04</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">a = b;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a());</span><br><span class="line"><span class="built_in">console</span>.log(b());</span><br><span class="line"><span class="built_in">console</span>.log(c());</span><br></pre></td></tr></table></figure>
 <p>输出：2</p>
 <p>2</p>
 <p>1</p>
-<p>###example05</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outPut</span>(<span class="params">s</span>)</span>&#123; </span><br><span class="line">	<span class="built_in">document</span>.writeln(s) </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a_array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; </span><br><span class="line"><span class="keyword">var</span> b_array = a_array; </span><br><span class="line">outPut(b_array); <span class="comment">//1,2,3 </span></span><br><span class="line">a_array[<span class="number">3</span>] = <span class="number">4</span>; </span><br><span class="line">outPut(b_array);<span class="comment">//1,2,3,4</span></span><br></pre></td></tr></table></figure>
-<p>###example06<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span>;</span><br><span class="line">s.toUpperCase();</span><br><span class="line"><span class="built_in">console</span>.log(s);	<span class="comment">//HELLO</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="example05"><a href="#example05" class="headerlink" title="example05"></a>example05</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outPut</span>(<span class="params">s</span>)</span>&#123; </span><br><span class="line">	<span class="built_in">document</span>.writeln(s) </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a_array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; </span><br><span class="line"><span class="keyword">var</span> b_array = a_array; </span><br><span class="line">outPut(b_array); <span class="comment">//1,2,3 </span></span><br><span class="line">a_array[<span class="number">3</span>] = <span class="number">4</span>; </span><br><span class="line">outPut(b_array);<span class="comment">//1,2,3,4</span></span><br></pre></td></tr></table></figure>
+<h3 id="example06"><a href="#example06" class="headerlink" title="example06"></a>example06</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span>;</span><br><span class="line">s.toUpperCase();</span><br><span class="line"><span class="built_in">console</span>.log(s);	<span class="comment">//HELLO</span></span><br></pre></td></tr></table></figure>
 <p>其实，本以为字符串是字符的数组，可以使用引用模式，但是其实在<code>s.toUpperCase()</code>这句中，实际是返回了一个新的值</p>
-<p>###example06（引用类型的比较）<br>    当且仅当他们引用同一个基对象时，它们才相等。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;x:<span class="number">1</span>&#125;,p = &#123;x:<span class="number">1</span>&#125;;	<span class="comment">//具有相同属性的两个对象</span></span><br><span class="line"><span class="number">0</span> === p;	<span class="comment">//=&gt; false: 两个单独的对象永不相等</span></span><br><span class="line"><span class="keyword">var</span> a = [],b = [];	<span class="comment">//两个单独的空数组</span></span><br><span class="line">a === b;	<span class="comment">//=&gt; false: 两个单独的数组永不相等</span></span><br></pre></td></tr></table></figure>
-<p>###声明提前</p>
-<p>###example07</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(scope);		<span class="comment">//=&gt;undefined</span></span><br><span class="line">	<span class="keyword">var</span> scope = <span class="string">"local"</span>;	</span><br><span class="line">	<span class="built_in">console</span>.log(scope);		<span class="comment">//=&gt;local</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="example06（引用类型的比较）"><a href="#example06（引用类型的比较）" class="headerlink" title="example06（引用类型的比较）"></a>example06（引用类型的比较）</h3><pre><code>当且仅当他们引用同一个基对象时，它们才相等。
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;x:<span class="number">1</span>&#125;,p = &#123;x:<span class="number">1</span>&#125;;	<span class="comment">//具有相同属性的两个对象</span></span><br><span class="line"><span class="number">0</span> === p;	<span class="comment">//=&gt; false: 两个单独的对象永不相等</span></span><br><span class="line"><span class="keyword">var</span> a = [],b = [];	<span class="comment">//两个单独的空数组</span></span><br><span class="line">a === b;	<span class="comment">//=&gt; false: 两个单独的数组永不相等</span></span><br></pre></td></tr></table></figure>
+<h3 id="声明提前"><a href="#声明提前" class="headerlink" title="声明提前"></a>声明提前</h3><h3 id="example07"><a href="#example07" class="headerlink" title="example07"></a>example07</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(scope);		<span class="comment">//=&gt;undefined</span></span><br><span class="line">	<span class="keyword">var</span> scope = <span class="string">"local"</span>;	</span><br><span class="line">	<span class="built_in">console</span>.log(scope);		<span class="comment">//=&gt;local</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(scope);		<span class="comment">//=&gt;global</span></span><br><span class="line">	scope = <span class="string">'local'</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(scope);		<span class="comment">//=&gt;local</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>前面讲解过，这里只是加了例子</p>
 
