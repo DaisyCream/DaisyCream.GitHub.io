@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Browser rendering | DaisyCream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="浏览器渲染原理工作流程1.浏览器解析三个东西
+解析HTML/SVG/XHTML,webkit有3个C++的类对应这三个文档，解析以后会生成一个DOM tree
+css，解析css会生成css的rule tree
+js，通过DOM API,CSSOM API来操作
+
+2.解析完成后，浏览器会通过DOM Tree和Css rule tree来构造rendering tree
+Rendering Tre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Browser rendering">
+<meta property="og:url" content="http://yoursite.com/2016/12/23/Browser-rendering/index.html">
+<meta property="og:site_name" content="DaisyCream">
+<meta property="og:description" content="浏览器渲染原理工作流程1.浏览器解析三个东西
+解析HTML/SVG/XHTML,webkit有3个C++的类对应这三个文档，解析以后会生成一个DOM tree
+css，解析css会生成css的rule tree
+js，通过DOM API,CSSOM API来操作
+
+2.解析完成后，浏览器会通过DOM Tree和Css rule tree来构造rendering tree
+Rendering Tre">
+<meta property="og:updated_time" content="2016-12-23T07:32:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Browser rendering">
+<meta name="twitter:description" content="浏览器渲染原理工作流程1.浏览器解析三个东西
+解析HTML/SVG/XHTML,webkit有3个C++的类对应这三个文档，解析以后会生成一个DOM tree
+css，解析css会生成css的rule tree
+js，通过DOM API,CSSOM API来操作
+
+2.解析完成后，浏览器会通过DOM Tree和Css rule tree来构造rendering tree
+Rendering Tre">
+  
+    <link rel="alternative" href="/atom.xml" title="DaisyCream" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/photo.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">DaisyCream</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/DaisyCream" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">Starry starry night Paint your palette blue and gray</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">DaisyCream</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/photo.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">DaisyCream</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/DaisyCream" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Browser-rendering" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/23/Browser-rendering/" class="article-date">
+  	<time datetime="2016-12-23T07:27:46.000Z" itemprop="datePublished">2016-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Browser rendering
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h1><h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><h3 id="1-浏览器解析三个东西"><a href="#1-浏览器解析三个东西" class="headerlink" title="1.浏览器解析三个东西"></a>1.浏览器解析三个东西</h3><ul>
+<li>解析HTML/SVG/XHTML,webkit有3个C++的类对应这三个文档，解析以后会生成一个DOM tree</li>
+<li>css，解析css会生成css的rule tree</li>
+<li>js，通过DOM API,CSSOM API来操作</li>
+</ul>
+<h3 id="2-解析完成后，浏览器会通过DOM-Tree和Css-rule-tree来构造rendering-tree"><a href="#2-解析完成后，浏览器会通过DOM-Tree和Css-rule-tree来构造rendering-tree" class="headerlink" title="2.解析完成后，浏览器会通过DOM Tree和Css rule tree来构造rendering tree"></a>2.解析完成后，浏览器会通过DOM Tree和Css rule tree来构造rendering tree</h3><ul>
+<li>Rendering Tree 渲染树并不等同于Dom树，因为像display：none这种东西没必要存在到rendering tree中</li>
+<li>css rule tree 是为了把css匹配到每一个rendering tree的element上，也就是所谓的frame</li>
+<li>然后计算每个frame的位置，这叫做layout和reflow的过程</li>
+</ul>
+<h3 id="3-最后通过操作系统的native-GUI的API绘制"><a href="#3-最后通过操作系统的native-GUI的API绘制" class="headerlink" title="3.最后通过操作系统的native GUI的API绘制"></a>3.最后通过操作系统的native GUI的API绘制</h3><h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><h3 id="渲染流程"><a href="#渲染流程" class="headerlink" title="渲染流程"></a>渲染流程</h3><ul>
+<li>计算css样式</li>
+<li>构建rendering tree</li>
+<li>Layout：定位坐标的大小，是否换行，各种position，overflow，z-index属性</li>
+<li>正式开画</li>
+</ul>
+<h3 id="重新渲染"><a href="#重新渲染" class="headerlink" title="重新渲染"></a>重新渲染</h3><ul>
+<li>repaint：屏幕的一部分要重画，比如某得css的背景色变了，但是元素的尺寸没有变</li>
+<li>reflow：意味着元件的几何尺寸变了，我们需要重新验证并计算render tree。<code>html使用的是flow base layout ，也就是流式布局，所以，如果某元件的尺寸发生了变化，就需要重新布局，reflow会从&lt;html&gt;这个root frame 开始递归往下</code></li>
+</ul>
+<h3 id="渲染成本"><a href="#渲染成本" class="headerlink" title="渲染成本"></a>渲染成本</h3><ul>
+<li>reflow的成本比repaint的成本高的多，Dom tree里的每个节点都会有reflow方法，一个节点的reflow可能导致子节点，甚至父节点以及同级节点的reflow。</li>
+</ul>
+<h4 id="以下动作会引起渲染成本增高"><a href="#以下动作会引起渲染成本增高" class="headerlink" title="以下动作会引起渲染成本增高"></a>以下动作会引起渲染成本增高</h4><ul>
+<li>当你增加，删除，修改dom节点时，会导致repaint或reflow</li>
+<li>当你移动dom位置，或是搞个动画</li>
+<li>当你修改css样式的时候</li>
+<li>当你的resize窗口的时候，或是滚动的时候</li>
+<li>当你修改网页默认字体的时候</li>
+<li>注：display:none 会发生reflow，而visibility:hidden只会触发repaint，因为没有位置发生改变。</li>
+<li>滚屏的时候如果有position:fixed的时候，滚动浏览器是一个相当痛苦的过程。因为滚屏都可能造成reflow</li>
+</ul>
+<h2 id="造成reflow的原因"><a href="#造成reflow的原因" class="headerlink" title="造成reflow的原因"></a>造成reflow的原因</h2><ul>
+<li>inital</li>
+<li>incremental：js操作dom</li>
+<li>resize：某些元素的尺寸变化</li>
+<li>styleChange：css的属性发生变化</li>
+<li>Dirty：几个incremental的reflow发生在同一个frame的子树上</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> bstyle = <span class="built_in">document</span>.body.style;</span><br><span class="line"></span><br><span class="line">bstyle.padding = <span class="string">'20px'</span>; <span class="comment">//reflow, repaint</span></span><br><span class="line">bstyle.color = <span class="string">'blue'</span>; <span class="comment">//repaint</span></span><br><span class="line">bstyle.fontSize = <span class="string">'2em'</span>; <span class="comment">//reflow, repaint</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//new Dom reflow, repaint</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">'dude!'</span>));</span><br></pre></td></tr></table></figure>
+<p><code>当然浏览器不会每次改一次样式，就reflow或repaint一次，一般来说，它会把这样的操作积攒，然后做一次reflow，这叫异步的reflow或者增量异步reflow，但是有些情况并不会这么做，比如：resize窗口，改变了页面默认的字体，这些操作会马上进行reflow</code></p>
+<h2 id="减少reflow-repaint"><a href="#减少reflow-repaint" class="headerlink" title="减少reflow/repaint"></a>减少reflow/repaint</h2><ul>
+<li>1.不要一条一条的修改dom的样式，先定义好css的class，然后修改dom的className</li>
+<li><p>2.把dom离线后修改</p>
+<ul>
+<li><p>使用documentFragment对象在内存里操作dom,documentFragements是一些dom节点，他们不是dom树的一部分，创建一个文档片段，然后将创建的dom元素插入到文档片段中，最后把文档片段插入到dom中，因为文档片段存在于内存中，并不在dom树中，所以将子元素插入到文档片段不会引起页面回流</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> docfrag = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">var</span> ss = [<span class="string">'asdsa'</span>, <span class="string">'ssss'</span>, <span class="string">'sssssdsd'</span>];</span><br><span class="line"></span><br><span class="line">ss.foreach(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">	li.textContent = e;</span><br><span class="line">	docfrag.appendChild(li);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ul.appendChild(docfrag);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不要把dom节点的属性值放在一个循环里当成循环的变量，会导致大量的读写这个节点的属性。</p>
+</li>
+<li>尽可能的修改层级比较低的dom</li>
+<li>为动画的html原件使用fixed或absulote，修改他们的css不会reflow</li>
+<li>千万不要使用table布局，一个小改动会造成整个table重新布局</li>
+</ul>
+</li>
+</ul>
+<p><code>此文为总结文，可以查看原文，原文有很多很棒的信息</code><br><a href="&quot;http://coolshell.cn/articles/9666.html&quot;">点此查看原文</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/24/DOM节点的补充/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM节点的补充</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Browser-rendering" data-title="Browser rendering" data-url="http://yoursite.com/2016/12/23/Browser-rendering/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 DaisyCream
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
